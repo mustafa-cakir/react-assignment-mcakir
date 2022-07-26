@@ -47,6 +47,7 @@ module.exports = {
         '@typescript-eslint/no-explicit-any': 'off',
         // 'max-len': ['error', { code: 120, tabWidth: 4 }],
         // 'arrow-parens': [2, 'as-needed'],
+        "react/button-has-type": "off",
         'react/no-danger': 'off',
         'jsx-a11y/control-has-associated-label': 'off',
         'jsx-a11y/label-has-associated-control': 'off',

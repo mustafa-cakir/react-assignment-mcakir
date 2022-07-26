@@ -1,5 +1,6 @@
-export type IUserState = {
-    user: null | string;
+export type IAuthState = {
+    id: null | string;
+    expiresIn: null | number;
 };
 
 export type IRoute = {
@@ -8,3 +9,7 @@ export type IRoute = {
 };
 
 export type IRoutes = IRoute[];
+
+export type IFormValues = {
+    [key: string]: string;
+};

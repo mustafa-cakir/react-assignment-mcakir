@@ -1,5 +1,6 @@
 import React from 'react';
 import Counter from '../../features/counter/Counter';
+import Login from '../Login';
 
 const Homepage = () => {
     return (
@@ -9,6 +10,10 @@ const Homepage = () => {
                 <h1>Counter Feature (that comes with Redux Toolkit template)</h1>
                 <hr />
                 <Counter />
+
+                <hr />
+
+                <Login />
             </div>
         </main>
     );

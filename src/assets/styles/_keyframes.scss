@@ -20,3 +20,15 @@
     }
 }
 
+@keyframes loader {
+    0%,
+    to {
+        transform: translate(0, -50%);
+        animation-timing-function: ease-in;
+    }
+
+    40% {
+        transform: translate(0, 50%);
+        animation-timing-function: cubic-bezier(0, 0, 0, 1);
+    }
+}
