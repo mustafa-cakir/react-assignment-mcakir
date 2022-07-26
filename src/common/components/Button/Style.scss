@@ -37,6 +37,9 @@
             background-color: $color-link;
         }
     }
+    &.is-fullwidth {
+        width: 100%;
+    }
     &.is-loading {
         cursor: progress;
         overflow: hidden;

@@ -9,7 +9,7 @@ type IUseFormReturn = {
     onSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
 };
 
-const useForm = (onSubmitCallback: IOnSubmitCallback, defaultFormValues: IFormValues = {}): IUseFormReturn => {
+const useCustomForm = (onSubmitCallback: IOnSubmitCallback, defaultFormValues: IFormValues = {}): IUseFormReturn => {
     const [localValues, setLocalValues] = useState<IFormValues>(defaultFormValues);
 
     const setValues = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -24,4 +24,4 @@ const useForm = (onSubmitCallback: IOnSubmitCallback, defaultFormValues: IFormVa
     return { values: localValues, setValues, onSubmit };
 };
 
-export default useForm;
+export default useCustomForm;

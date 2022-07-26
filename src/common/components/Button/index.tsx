@@ -12,13 +12,16 @@ type Prop = {
     onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
     type?: 'button' | 'submit';
     disabled?: boolean;
+    isFullWidth?: boolean;
     isLoading?: boolean;
 };
 
-const Button = ({ title, layout, size, name, type, onClick, disabled, isLoading, children }: Prop) => {
+const Button = ({ title, layout, size, name, type, onClick, disabled, isLoading, isFullWidth, children }: Prop) => {
     return (
         <button
-            className={`button ${layout} size-${size} ${isLoading ? 'is-loading' : ''}`}
+            className={`button ${layout} size-${size} ${isLoading ? 'is-loading' : ''} ${
+                isFullWidth ? 'is-fullwidth' : ''
+            }`}
             type={type === 'submit' ? 'submit' : 'button'}
             aria-label={title}
             title={title}
@@ -44,6 +47,7 @@ Button.defaultProps = {
     name: 'button',
     type: 'button',
     disabled: false,
+    isFullWidth: false,
     isLoading: false,
     onClick: undefined,
 };

@@ -1,39 +1,29 @@
-import React from 'react';
-import Input from '../../common/components/Input';
-import useForm from '../../common/hooks/useForm';
-import { IFormValues } from '../../app/types';
-import Button from '../../common/components/Button';
+import React, { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { URL_PRODUCTS_LIST } from '../../common/constants';
+import { useAppSelector } from '../../common/hooks';
+import LoginForm from '../../features/login/LoginForm';
 
 const Login = () => {
-    const onSubmitHandler = (formValues: IFormValues) => {
-        console.log(formValues);
-    };
+    const navigate = useNavigate();
+    const { isAuthenticated } = useAppSelector(redux => redux.login);
 
-    const { values, setValues, onSubmit } = useForm(onSubmitHandler);
+    useEffect(() => {
+        if (isAuthenticated) {
+            // if user has already been logged in, then forward it to homepage
+            navigate(URL_PRODUCTS_LIST);
+        }
+    }, [isAuthenticated, navigate]);
 
     return (
-        <>
-            <div>login page will go here</div>
-            <form onSubmit={onSubmit}>
-                <div className="my-3">
-                    <Input name="name" onChange={setValues} label="Username" value={values.name} />
+        <div className="row">
+            <div className="col col-12 col-md-6 col-lg-4 mx-auto">
+                <div className="ui-card my-50">
+                    <h1 className="mt-2">Login</h1>
+                    <LoginForm />
                 </div>
-                <div className="my-3">
-                    <Input
-                        type="password"
-                        name="password"
-                        onChange={setValues}
-                        label="Password"
-                        value={values.password}
-                    />
-                </div>
-                <div className="my-3">
-                    <Button title="Submit" isLoading>
-                        Submit
-                    </Button>
-                </div>
-            </form>
-        </>
+            </div>
+        </div>
     );
 };
 

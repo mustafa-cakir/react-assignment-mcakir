@@ -42,12 +42,13 @@ body {
 }
 
 .app {
-    background-color: #fff;
     color: $color-dark;
     transition: background-color 0.2s linear, color 0.2s linear;
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
+    background-color: $color-light;
+
     &-content {
         position: relative;
         z-index: 4;
