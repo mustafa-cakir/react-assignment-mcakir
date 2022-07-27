@@ -1,10 +1,10 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-import userReducer from '../slices/userSlice';
-import counterReducer from '../../features/counter/counterSlice';
+import userReducer from '../../features/user/userSlice';
+import productsReducer from '../../features/Products/productsSlice';
 
 const rootReducer = {
     user: userReducer,
-    counter: counterReducer,
+    products: productsReducer,
 };
 
 // makeSure() is defined to make store creation in the test.

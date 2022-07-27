@@ -1,0 +1,24 @@
+@import '../../../assets/styles/mixins';
+
+.layout-buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    button {
+        padding: 5px 15px;
+        display: inline-flex;
+        align-items: center;
+        font-size: 20px;
+        color: rgba($color-dark, 0.2);
+        &.is-active {
+            color: $color-dark;
+        }
+        &:hover:not(.is-active) {
+            color: rgba($color-dark, 0.4);
+        }
+
+        &:first-child {
+            border-right: 1px solid rgba($color-dark, 0.2);
+        }
+    }
+}

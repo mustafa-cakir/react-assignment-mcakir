@@ -1,11 +1,8 @@
 /**
  * Route Constants
  */
-
-export const URL_HOMEPAGE = '/';
 export const URL_LOGIN = '/login';
-export const URL_PRODUCTS_LIST = '/products/list';
-export const URL_PRODUCTS_UPDATE = '/products/update/:id';
+export const URL_PRODUCTS_LIST = '/';
 export const URL_PRODUCTS_ADD = '/products/add';
 
 /**
@@ -13,3 +10,11 @@ export const URL_PRODUCTS_ADD = '/products/add';
  */
 
 export const BASE_API_URL = 'http://localhost:7001';
+export const API_LOGIN = '/login';
+export const API_DEVICES = '/devices';
+
+/**
+ * Other Constants
+ */
+
+export const COOKIE_NAME = 'mustafa-ikea';

@@ -1,3 +1,4 @@
+import '@testing-library/jest-dom';
 import React, { ReactElement } from 'react';
 import { render } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';

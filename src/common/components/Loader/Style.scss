@@ -1,0 +1,36 @@
+@import 'src/assets/styles/mixins';
+.loader-container {
+    opacity: 0;
+    animation: fadeIn 0.2s linear forwards;
+    .loader {
+        display: inline-flex;
+        border-radius: 50% 50%;
+        animation: loader 0.7s infinite;
+        transition: opacity 0.25s cubic-bezier(0.4, 0, 0.4, 1), transform 0.25s cubic-bezier(0.4, 0, 0.4, 1), height 0.25s cubic-bezier(0.4, 0, 0.4, 1);
+        &.size {
+            &-small {
+                width: 10px;
+                height: 10px;
+            }
+            &-normal {
+                width: 20px;
+                height: 20px;
+            }
+            &-big {
+                width: 30px;
+                height: 30px;
+            }
+        }
+        &.color {
+            &-light {
+                background-color: #fff;
+            }
+            &-dark {
+                background-color: $color-dark;
+            }
+            &-color {
+                background-color: $color-link;
+            }
+        }
+    }
+}

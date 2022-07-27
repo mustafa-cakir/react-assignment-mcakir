@@ -5,6 +5,14 @@ export const fetchService = axios.create({
     baseURL: BASE_API_URL,
 });
 
+export const setBearerToFetchService = (id: string) => {
+    fetchService.defaults.headers.common.Authorization = `Bearer ${id}`;
+};
+
+export const removeBearerFromFetchService = () => {
+    fetchService.defaults.headers.common.Authorization = '';
+};
+
 // Alternatively, fetch() can be used as follows;
 
 // return fetch(BASE_API_URL + api, {
