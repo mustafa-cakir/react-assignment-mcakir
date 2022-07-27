@@ -1,0 +1,33 @@
+@import 'src/assets/styles/mixins';
+
+.product {
+    margin-bottom: 15px;
+    .col-picture {
+        img {
+            border-radius: 5px;
+            width: 100px;
+            height: 100px;
+            display: block;
+            @include media-breakpoint-up(md) {
+                width: 150px;
+                height: 150px;
+            }
+            @include media-breakpoint-up(lg) {
+                width: 200px;
+                height: 200px;
+            }
+        }
+    }
+    .col-spec-left {
+        max-width: 100px;
+    }
+    .text-enabled {
+        font-size: 16px;
+        &.green {
+            color: $color-green;
+        }
+        &.red {
+            color: $color-red;
+        }
+    }
+}

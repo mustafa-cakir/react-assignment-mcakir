@@ -8,7 +8,7 @@ type Prop = {
 };
 
 const PrivateRoute = ({ children }: Prop): JSX.Element => {
-    const { isAuthenticated } = useAppSelector(redux => redux.login);
+    const { isAuthenticated } = useAppSelector(redux => redux.user);
     return isAuthenticated ? children : <Navigate to={URL_LOGIN} />;
 };
 

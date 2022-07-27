@@ -1,12 +1,11 @@
 import React from 'react';
-import './Style.scss';
 import Loader from '../Loader';
 
 type Prop = {
     title: string;
     children: string | JSX.Element | JSX.Element[];
     // optionals
-    layout?: 'primary' | 'secondary';
+    layout?: 'primary' | 'secondary' | 'red';
     size?: 'normal' | 'large' | 'tiny';
     name?: string;
     onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
@@ -19,7 +18,7 @@ type Prop = {
 const Button = ({ title, layout, size, name, type, onClick, disabled, isLoading, isFullWidth, children }: Prop) => {
     return (
         <button
-            className={`button ${layout} size-${size} ${isLoading ? 'is-loading' : ''} ${
+            className={`ui-button ${layout} size-${size} ${isLoading ? 'is-loading' : ''} ${
                 isFullWidth ? 'is-fullwidth' : ''
             }`}
             type={type === 'submit' ? 'submit' : 'button'}

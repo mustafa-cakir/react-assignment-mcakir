@@ -2,11 +2,11 @@ import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { URL_PRODUCTS_LIST } from '../../common/constants';
 import { useAppSelector } from '../../common/hooks';
-import LoginForm from '../../features/login/LoginForm';
+import LoginForm from '../../features/user/LoginForm';
 
 const Login = () => {
     const navigate = useNavigate();
-    const { isAuthenticated } = useAppSelector(redux => redux.login);
+    const { isAuthenticated } = useAppSelector(redux => redux.user);
 
     useEffect(() => {
         if (isAuthenticated) {

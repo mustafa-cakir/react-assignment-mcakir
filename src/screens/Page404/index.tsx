@@ -12,7 +12,7 @@ const Page404 = () => {
                 <div className="page-404-inner">
                     <div>
                         <code>404 - Page not found.</code>
-                        <div className="ui-text-muted">That's all we know</div>
+                        <div>That's all we know</div>
                     </div>
                 </div>
             </div>

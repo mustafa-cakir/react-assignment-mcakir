@@ -3,7 +3,7 @@ import Icons from '../Icons';
 import './Style.scss';
 
 type Props = {
-    type: 'info' | 'error';
+    type: 'info' | 'error' | 'success';
     message: string;
 };
 

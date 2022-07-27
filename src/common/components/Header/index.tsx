@@ -5,11 +5,11 @@ import './Style.scss';
 import { useAppDispatch, useAppSelector } from '../../hooks';
 import Button from '../Button';
 import Icons from '../Icons';
-import { logout } from '../../../features/login/loginSlice';
+import { logout } from '../../../features/user/userSlice';
 
 const Header = () => {
     const dispatch = useAppDispatch();
-    const { isAuthenticated } = useAppSelector(redux => redux.login);
+    const { isAuthenticated } = useAppSelector(redux => redux.user);
 
     const logoutClickHandler = () => {
         dispatch(logout());

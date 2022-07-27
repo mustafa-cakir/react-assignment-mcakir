@@ -2,10 +2,10 @@ import React from 'react';
 import './Style.scss';
 
 type Prop = {
-    name: string;
     label: string;
-    onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
     // optionals
+    onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    name?: string | undefined;
     required?: boolean;
     type?: 'text' | 'password';
     value?: string;
@@ -35,6 +35,8 @@ Input.defaultProps = {
     type: 'text',
     value: '',
     disabled: false,
+    onChange: () => {},
+    name: '',
 };
 
 export default Input;
