@@ -12,8 +12,14 @@ describe('Header Component', () => {
         render(<Header />);
         expect(screen.getByTestId('header-logo')).toBeInTheDocument();
     });
-    it('should render themeSwitcher component', () => {
-        render(<Header />);
-        expect(screen.getByTestId('theme-switcher')).toBeInTheDocument();
+    it('should display the logout button if user is logged in', () => {
+        render(<Header />, {
+            preloadedState: {
+                user: {
+                    isAuthenticated: true,
+                },
+            },
+        });
+        expect(screen.getByText('Logout')).toBeInTheDocument();
     });
 });

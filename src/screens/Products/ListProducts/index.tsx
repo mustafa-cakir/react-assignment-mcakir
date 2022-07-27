@@ -1,29 +1,20 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../../../common/hooks';
 import { getProducts } from '../../../features/Products/productsAPI';
-import ListProductsLoading from './ListProductsLoading';
-import Alert from '../../../common/components/Alert';
-import ProductItem from './ProductItem';
-import LayoutButtons from './LayoutButtons';
+import LayoutButtons from '../../../features/Products/LayoutButtons';
 import Icons from '../../../common/components/Icons';
 import { URL_PRODUCTS_ADD } from '../../../common/constants';
-import UpdateProductModal from './UpdateProductModal';
+import ProductsContent from '../../../features/Products/ProductsContent';
 
 const ListProducts = () => {
-    const { products, isLoading, error, layout, update } = useAppSelector(redux => redux.products);
+    const { products } = useAppSelector(redux => redux.products);
 
     const dispatch = useAppDispatch();
 
     useEffect(() => {
         dispatch(getProducts());
     }, [dispatch]);
-
-    const classNames = useMemo(() => {
-        return {
-            productCol: layout === 'grid' ? 'col col-12 col-md-6 col-lg-4' : 'col col-12',
-        };
-    }, [layout]);
 
     return (
         <>
@@ -40,26 +31,7 @@ const ListProducts = () => {
                 {products?.length > 0 && <LayoutButtons />}
             </div>
             <hr />
-            {isLoading ? (
-                <ListProductsLoading />
-            ) : (
-                <>
-                    {error && <Alert type="error" message={error} />}
-                    {products?.length === 0 && <Alert type="info" message="No products found to display." />}
-                    {products?.length > 0 && (
-                        <div className="products" data-testid="list-products">
-                            <div className="row">
-                                {products.map(product => (
-                                    <div className={classNames.productCol} key={product.id}>
-                                        <ProductItem product={product} />
-                                    </div>
-                                ))}
-                            </div>
-                        </div>
-                    )}
-                    {update.product && <UpdateProductModal product={update.product} />}
-                </>
-            )}
+            <ProductsContent />
         </>
     );
 };

@@ -20,7 +20,7 @@ const Header = () => {
             <div className="container">
                 <div className="row">
                     <div className="col">
-                        <Link to={URL_PRODUCTS_LIST} className="header-logo">
+                        <Link to={URL_PRODUCTS_LIST} className="header-logo" data-testid="header-logo">
                             Logo
                         </Link>
                     </div>

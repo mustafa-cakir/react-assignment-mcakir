@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
-import Modal from '../../../../common/components/Modal';
-import { useAppDispatch, useAppSelector } from '../../../../common/hooks';
-import { closeUpdateProductModal } from '../../../../features/Products/productsSlice';
-import Alert from '../../../../common/components/Alert';
-import Input from '../../../../common/components/Input';
-import Checkbox from '../../../../common/components/Checkbox';
-import Button from '../../../../common/components/Button';
-import { updateProduct } from '../../../../features/Products/productsAPI';
-import { IProduct } from '../../../../app/types';
+import Modal from '../../../common/components/Modal';
+import { useAppDispatch, useAppSelector } from '../../../common/hooks';
+import { closeUpdateProductModal } from '../productsSlice';
+import Alert from '../../../common/components/Alert';
+import Input from '../../../common/components/Input';
+import Checkbox from '../../../common/components/Checkbox';
+import Button from '../../../common/components/Button';
+import { updateProduct } from '../productsAPI';
+import { IProduct } from '../../../app/types';
 
 type Prop = {
     product: IProduct;

@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
-import Shimmer from '../../../../common/components/Shimmer';
-import ShimmerItem from '../../../../common/components/Shimmer/ShimmerItem';
-import { useAppSelector } from '../../../../common/hooks';
+import Shimmer from '../../../common/components/Shimmer';
+import ShimmerItem from '../../../common/components/Shimmer/ShimmerItem';
+import { useAppSelector } from '../../../common/hooks';
 
 const ListProductsLoading = () => {
     const { layout } = useAppSelector(redux => redux.products);

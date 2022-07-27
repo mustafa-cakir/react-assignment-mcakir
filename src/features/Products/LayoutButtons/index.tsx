@@ -1,7 +1,7 @@
 import React from 'react';
-import { useAppDispatch, useAppSelector } from '../../../../common/hooks';
-import { setLayout } from '../../../../features/Products/productsSlice';
-import Icons from '../../../../common/components/Icons';
+import { useAppDispatch, useAppSelector } from '../../../common/hooks';
+import { setLayout } from '../productsSlice';
+import Icons from '../../../common/components/Icons';
 import './Style.scss';
 
 const LayoutButtons = () => {

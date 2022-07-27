@@ -1,11 +1,11 @@
 import React, { useMemo } from 'react';
-import noImage from '../../../../assets/images/no-image.png';
-import { IProduct } from '../../../../app/types';
-import Icons from '../../../../common/components/Icons';
-import { useAppDispatch, useAppSelector } from '../../../../common/hooks';
-import Button from '../../../../common/components/Button';
-import { openUpdateProductModal } from '../../../../features/Products/productsSlice';
-import { deleteProduct } from '../../../../features/Products/productsAPI';
+import noImage from '../../../assets/images/no-image.png';
+import { IProduct } from '../../../app/types';
+import Icons from '../../../common/components/Icons';
+import { useAppDispatch, useAppSelector } from '../../../common/hooks';
+import Button from '../../../common/components/Button';
+import { openUpdateProductModal } from '../productsSlice';
+import { deleteProduct } from '../productsAPI';
 import './Style.scss';
 
 type Prop = {
