@@ -1,4 +1,4 @@
-`IKEA Assignment - Crafted with Love by Mustafa Cakir`
+`Assignment - Crafted with Love by Mustafa Cakir`
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) TS template.
 

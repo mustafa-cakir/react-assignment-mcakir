@@ -17,4 +17,4 @@ export const API_DEVICES = '/devices';
  * Other Constants
  */
 
-export const COOKIE_NAME = 'mustafa-ikea';
+export const COOKIE_NAME = 'mustafa-cookie';
