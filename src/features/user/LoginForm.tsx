@@ -21,12 +21,13 @@ const LoginForm = () => {
     return (
         <>
             {error && <Alert type="error" message={error} />}
-            <form onSubmit={onSubmitHandler}>
+            <form onSubmit={onSubmitHandler} data-testid="login-form">
                 <div className="my-3">
-                    <Input onChange={event => setName(event.target.value)} label="Username" value={name} />
+                    <Input name="name" onChange={event => setName(event.target.value)} label="Username" value={name} />
                 </div>
                 <div className="my-3">
                     <Input
+                        name="password"
                         type="password"
                         onChange={event => setPassword(event.target.value)}
                         label="Password"
