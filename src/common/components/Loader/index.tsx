@@ -8,7 +8,7 @@ type Prop = {
 
 const Loader = ({ color, size }: Prop) => {
     return (
-        <div className="loader-container">
+        <div className="loader-container" data-testid="loader">
             <div className={`loader color-${color} size-${size}`} />
         </div>
     );

@@ -22,7 +22,7 @@ describe('Modal Common Component', () => {
         );
         expect(screen.getByText('Modal Body Goes Here')).toBeInTheDocument();
     });
-    it('should modal component refrelect max-width prop', () => {
+    it('should modal component reflects max-width prop', () => {
         const closeHandler = jest.fn();
         render(
             <Modal closeHandler={closeHandler} maxWidth={600}>

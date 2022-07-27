@@ -20,4 +20,8 @@ describe('Alert Common Component', () => {
         render(<Alert type="info" message="some message" />);
         expect(screen.getByTestId('alert')).toHaveClass('type-info');
     });
+    it('should alert component type set to success', () => {
+        render(<Alert type="success" message="some message" />);
+        expect(screen.getByTestId('alert')).toHaveClass('type-success');
+    });
 });

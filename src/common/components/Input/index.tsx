@@ -8,7 +8,7 @@ type Prop = {
     name?: string | undefined;
     required?: boolean;
     type?: 'text' | 'password';
-    value?: string;
+    value?: string | undefined;
     disabled?: boolean;
 };
 
@@ -33,7 +33,7 @@ const Input = ({ label, name, type, value, required, onChange, disabled }: Prop)
 Input.defaultProps = {
     required: true,
     type: 'text',
-    value: '',
+    value: undefined,
     disabled: false,
     onChange: () => {},
     name: '',
