@@ -7,7 +7,7 @@
 .ui {
     &-text {
         &-muted {
-            color: rgba($color-dark, .6);
+            color: rgba($color-dark, 0.6);
         }
     }
     // custom global UI styles will go here.
@@ -21,7 +21,7 @@
     &-link {
         color: $color-link;
         border-bottom: 1px solid transparent;
-        transition: border-bottom-color .2s linear;
+        transition: border-bottom-color 0.2s linear;
         &:hover {
             border-bottom-color: $color-link;
         }
@@ -72,7 +72,8 @@
                 color: #fff;
             }
             &:active,
-            &:focus {
+            &:focus,
+            &.is-loading {
                 color: #fff;
                 background-color: $color-red;
                 box-shadow: 0 0 0 2px rgba($color-red, 0.2);

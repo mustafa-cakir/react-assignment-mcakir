@@ -19,9 +19,10 @@ const ListProducts = () => {
         dispatch(getProducts());
     }, [dispatch]);
 
-    const getClassNameForProductCol = useMemo(() => {
-        if (layout === 'grid') return 'col col-12 col-md-6 col-lg-4';
-        return 'col col-12';
+    const classNames = useMemo(() => {
+        return {
+            productCol: layout === 'grid' ? 'col col-12 col-md-6 col-lg-4' : 'col col-12',
+        };
     }, [layout]);
 
     return (
@@ -49,7 +50,7 @@ const ListProducts = () => {
                         <div className="products" data-testid="list-products">
                             <div className="row">
                                 {products.map(product => (
-                                    <div className={getClassNameForProductCol} key={product.id}>
+                                    <div className={classNames.productCol} key={product.id}>
                                         <ProductItem product={product} />
                                     </div>
                                 ))}

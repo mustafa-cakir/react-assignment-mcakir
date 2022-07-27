@@ -5,8 +5,8 @@ import Icons from '../../../../common/components/Icons';
 import { useAppDispatch, useAppSelector } from '../../../../common/hooks';
 import Button from '../../../../common/components/Button';
 import { openUpdateProductModal } from '../../../../features/Products/productsSlice';
-import './Style.scss';
 import { deleteProduct } from '../../../../features/Products/productsAPI';
+import './Style.scss';
 
 type Prop = {
     product: IProduct;
@@ -21,14 +21,11 @@ const ProductItem = ({ product }: Prop) => {
 
     const { id, title, material } = product;
 
-    const getClassNameForImageCol = useMemo(() => {
-        if (layout === 'grid') return 'col col-12 mb-3';
-        return 'col col-auto col-picture';
-    }, [layout]);
-
-    const getClassNameForActionButtonsCol = useMemo(() => {
-        if (layout === 'grid') return 'col col-12 mt-3';
-        return 'col col-auto';
+    const classNames = useMemo(() => {
+        return {
+            imageCol: layout === 'grid' ? 'col col-12 mb-3' : 'col col-auto col-picture',
+            buttonCol: layout === 'grid' ? 'col col-12 mt-3' : 'col col-12 col-md-auto mt-3 mt-md-0',
+        };
     }, [layout]);
 
     const editButtonClickHandler = () => {
@@ -40,9 +37,9 @@ const ProductItem = ({ product }: Prop) => {
     };
 
     return (
-        <div className="product ui-card" data-testid="product">
+        <div className="product ui-card mb-3" data-testid="product">
             <div className="row">
-                <div className={getClassNameForImageCol}>
+                <div className={classNames.imageCol}>
                     <img src={noImage} alt={title} />
                 </div>
                 <div className="col">
@@ -60,7 +57,7 @@ const ProductItem = ({ product }: Prop) => {
                         <div className="col">{material}</div>
                     </div>
                 </div>
-                <div className={getClassNameForActionButtonsCol}>
+                <div className={classNames.buttonCol}>
                     <Button title="Edit" onClick={editButtonClickHandler} layout="secondary" size="tiny">
                         <Icons name="edit" />
                         <span className="ml-2">Edit</span>

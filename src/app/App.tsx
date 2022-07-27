@@ -4,13 +4,14 @@ import routes from './routes';
 import Page404 from '../screens/Page404';
 import Header from '../common/components/Header';
 import PrivateRoute from './routes/PrivateRoute';
+import Footer from '../common/components/Footer';
 
 const App = () => {
     return (
         <div className="app" data-testid="app">
             <BrowserRouter>
+                <Header />
                 <div className="app-content">
-                    <Header />
                     <div className="container">
                         <Routes>
                             {routes.map(({ path, Component, isAuthRequired }) => {
@@ -34,6 +35,7 @@ const App = () => {
                         </Routes>
                     </div>
                 </div>
+                <Footer />
             </BrowserRouter>
         </div>
     );
