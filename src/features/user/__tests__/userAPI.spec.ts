@@ -3,7 +3,6 @@ import { rest } from 'msw';
 import { IAuth, ILogin } from '../../../app/types';
 import { API_LOGIN, BASE_API_URL } from '../../../common/constants';
 import { makeStoreForTesting } from '../../../app/store';
-import { log } from 'util';
 import { login } from '../userAPI';
 import { getTokenFromCookie } from '../../../common/utils';
 
@@ -28,8 +27,8 @@ beforeAll(() => server.listen());
 afterEach(() => server.resetHandlers());
 afterAll(() => server.close());
 
-describe('Favorite Stocks Api', () => {
-    it('should fetch quote', async () => {
+describe('User Api', () => {
+    it('should handle login properly', async () => {
         // pre-setup for the case
         const mockStore = makeStoreForTesting(); // create the mock store (so the state updates within this case won't affect other cases)
         await mockStore.dispatch(login(mockLoginData)); //  dispatch the method

@@ -14,11 +14,6 @@ describe('User Reducer', () => {
         expiresIn: 100,
     };
 
-    const mockLoginData: ILogin = {
-        name: 'some-name',
-        password: 'some-password',
-    };
-
     it('should handle initial state', () => {
         expect(userReducer(undefined, { type: 'unknown' })).toEqual(initialState);
     });
@@ -34,28 +29,4 @@ describe('User Reducer', () => {
         const mock = userReducer({ ...initialState, isAuthenticated: true }, logout());
         expect(mock.isAuthenticated).toBeFalsy();
     });
-    // it('should handle the login async action properly', async () => {
-    //     // create the mock store (so the state updates within this case won't affect other cases)
-    //     const mockStore = makeStoreForTesting();
-    //     //  dispatch the method to fetch and await for it
-    //     await mockStore.dispatch(login(mockLoginData));
-    //
-    //     // add the question to edit.
-    //     await mockStore.dispatch(editQuestion(mockInitialQuestionsData[0]));
-    //     expect(mockStore.getState().questions.editingQuestionObj?.id).toBe(mockInitialQuestionsData[0].id);
-    //
-    //     // cancel the editing
-    //     await mockStore.dispatch(cancelEditingQuestion());
-    //     expect(mockStore.getState().questions.editingQuestionObj).toBeNull();
-    // });
-    //
-    // it('should handle the remove all questions action properly', () => {
-    //     const actual = questionsReducer(initialState, removeAllQuestions());
-    //     expect(actual?.data.length).toBe(0);
-    // });
-    //
-    // it('should handle the sort questions action properly', () => {
-    //     const actual = questionsReducer(initialState, sortQuestions());
-    //     expect(actual?.data[0].question).toBe(mockInitialQuestionsData[mockInitialQuestionsData.length - 1].question);
-    // });
 });

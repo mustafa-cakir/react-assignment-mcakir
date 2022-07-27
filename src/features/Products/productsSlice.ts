@@ -1,8 +1,6 @@
 import update from 'immutability-helper';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { IAuth, ILayout, IProduct, IProductsState } from '../../app/types';
-import { removeBearerFromFetchService, setBearerToFetchService } from '../../common/services/fetch';
-import { getTokenFromCookie, removeTokenFromCookie, setTokenToCookie } from '../../common/utils';
+import { ILayout, IProduct, IProductsState } from '../../app/types';
 import { addProduct, deleteProduct, getProducts, updateProduct } from './productsAPI';
 
 // This is the global state. App-wide states will be store here

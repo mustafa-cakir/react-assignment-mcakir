@@ -61,7 +61,13 @@ const UpdateProductModal = ({ product }: Prop) => {
                         />
                     </div>
                     <div className="mt-4">
-                        <Button type="submit" title="Update Product" disabled={isLoading} isLoading={isLoading}>
+                        <Button
+                            name="update"
+                            type="submit"
+                            title="Update Product"
+                            disabled={isLoading}
+                            isLoading={isLoading}
+                        >
                             Update
                         </Button>
                     </div>

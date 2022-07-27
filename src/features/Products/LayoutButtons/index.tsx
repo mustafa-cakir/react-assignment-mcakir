@@ -17,11 +17,21 @@ const LayoutButtons = () => {
     };
 
     return (
-        <div className="layout-buttons">
-            <button type="button" onClick={onGridClickHandler} className={layout === 'grid' ? 'is-active' : ''}>
+        <div className="layout-buttons" data-testid="layout-buttons">
+            <button
+                type="button"
+                data-testid="grid"
+                onClick={onGridClickHandler}
+                className={layout === 'grid' ? 'is-active' : ''}
+            >
                 <Icons name="grid" />
             </button>
-            <button type="button" onClick={onListClickHandler} className={layout === 'list' ? 'is-active' : ''}>
+            <button
+                type="button"
+                data-testid="list"
+                onClick={onListClickHandler}
+                className={layout === 'list' ? 'is-active' : ''}
+            >
                 <Icons name="list" />
             </button>
         </div>
